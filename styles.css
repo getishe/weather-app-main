@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --light-blue: hsl(212, 100%, 50%);
+  --dark-blue: #02012b;
+  --very-dark-blue: hsl(214, 100%, 20%);
+  --light-gray: hsl(240, 100%, 95%);
+  --gray: hsl(240, 100%, 80%);
+  --dark-gray: hsl(240, 100%, 60%);
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/fonts/Bricolage_Grotesque/static/BricolageGrotesque-Bold.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+h1 {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  /* justify-content: center; */
+  /* align-items: center; */
+  display: grid;
+  min-height: 100vh;
+  max-width: 1440px;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin: 0 70px 0 70px;
+  position: relative;
+  padding: 10px 0 10px 0;
+  /* border-bottom: 1px solid var(--gray); */
+}
+
+.logo {
+  align-items: center;
+}
+
+.toggle-units {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  /* margin-bottom: 1rem; */
+}
+
+button {
+  background-color: var(--very-dark-blue);
+  border: none;
+  padding: 10px;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  /* width: 80px;
+  height: auto; */
+  cursor: pointer;
+  color: white;
+  margin-bottom: 1rem;
+  /* font-size: 20px; */
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  top: 60px;
+  background-color: var(--very-dark-blue);
+  border-radius: 7px;
+  flex-direction: column;
+  padding: 0 0.7rem;
+  left: 83.69%;
+  width: 200px;
+  height: auto;
+  text-align: left;
+  background-color: hsl(243, 27%, 20%);
+}
+
+.dropdown-menu p {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+p.dropdown-item {
+  font-size: 0.9rem;
+  background-color: hsl(243, 27%, 20%);
+}
+
+.dropdown-menu p:not(.dropdown-item, .switch) {
+  background-color: var(--dark-gray);
+  margin: 0.3rem 0;
+  border-radius: 5px;
+  padding: 6px;
+  background-color: hsl(243, 23%, 24%);
+  font-size: 0.9rem;
+}
+
+hr {
+  margin: 15px 0px 8px 0px;
+  border: 0;
+  height: 1px;
+  background: var(--gray);
+}
