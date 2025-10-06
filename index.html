@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Weather app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/images/logo.svg" alt="Weather App Logo" />
+      </div>
+      <div class="toggle-units">
+        <button type="button" id="toggle-units">
+          <img
+            src="./assets/images/icon-units.svg"
+            alt="Sun Icon"
+            class="dropdown"
+          />
+          Units
+          <img
+            src="./assets/images/icon-dropdown.svg"
+            alt="Arrow Icon"
+            class="arrow-icon"
+          />
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+          <p class="switch">Switch to Imperial</p>
+
+          <p class="dropdown-item">Temperature</p>
+
+          <p class="celsius">Celsius (°C)</p>
+          <p class="fahrenheit">Fahrenheit (°F)</p>
+          <hr />
+          <p class="dropdown-item">Wind Speed</p>
+
+          <p class="kmh">km/h</p>
+          <p class="mph">mph</p>
+          <hr />
+          <p class="dropdown-item">Precipitation</p>
+
+          <p class="mm">Millimeters (mm)</p>
+          <p class="in">Inches (in)</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a city..."
+        />
+        <button type="button" id="search-button">Search</button>
+      </div>
+
+      <h1 class="main-title">How's the sky looking today?</h1>
+      <!-- <p>Search for a city, e.g., New York</p> -->
+      <div class="atomsphere">
+        <p class="description">Feels like</p>
+        <!-- Insert temperature here -->
+
+        <p class="description">Humidity</p>
+        <!-- Insert humidity here -->
+
+        <p class="description">Wind</p>
+        <!-- Insert wind here -->
+
+        <p class="description">Precipitation</p>
+        <!-- Insert precipitation here -->
+      </div>
+      <div class="daily">
+        <h2>Daily forecast</h2>
+        <!-- Insert daily forecast for the next 7 days here -->
+        <div class="daily-forecast">
+          <p class="day">Sat</p>
+          <p class="day">Sun</p>
+          <p class="day">Mon</p>
+          <p class="day">Tue</p>
+          <p class="day">Wed</p>
+          <p class="day">Thu</p>
+          <p class="day">Fri</p>
+        </div>
+      </div>
+    </main>
+    <section sidebar>
+      <h3>Hourly forecast</h3>
+      <!-- Insert hourly forecast for the selected day here -->
+      <div class="daily-forecast">
+        <button type="button">Saturday</button>
+        <div class="drop-down">
+          <p>Monday</p>
+          <p>Tuesday</p>
+          <p>Wednesday</p>
+          <p>Thursday</p>
+          <p>Friday</p>
+          <p>Saturday</p>
+          <p>Sunday</p>
+        </div>
+      </div>
+    </section>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
