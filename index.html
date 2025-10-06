@@ -66,60 +66,61 @@
       </div>
     </header>
     <main>
-      <div class="search-bar">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Search for a city..."
-        />
-        <button type="button" id="search-button">Search</button>
-      </div>
+      <section id="search-section">
+        <h1 class="main-title">How's the sky looking today?</h1>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a city..."
+          />
+          <button type="button" id="search-button">Search</button>
+        </div>
+        <!-- <p>Search for a city, e.g., New York</p> -->
+        <div class="atomsphere">
+          <p class="description">Feels like</p>
+          <!-- Insert temperature here -->
 
-      <h1 class="main-title">How's the sky looking today?</h1>
-      <!-- <p>Search for a city, e.g., New York</p> -->
-      <div class="atomsphere">
-        <p class="description">Feels like</p>
-        <!-- Insert temperature here -->
+          <p class="description">Humidity</p>
+          <!-- Insert humidity here -->
 
-        <p class="description">Humidity</p>
-        <!-- Insert humidity here -->
+          <p class="description">Wind</p>
+          <!-- Insert wind here -->
 
-        <p class="description">Wind</p>
-        <!-- Insert wind here -->
-
-        <p class="description">Precipitation</p>
-        <!-- Insert precipitation here -->
-      </div>
-      <div class="daily">
-        <h2>Daily forecast</h2>
-        <!-- Insert daily forecast for the next 7 days here -->
+          <p class="description">Precipitation</p>
+          <!-- Insert precipitation here -->
+        </div>
+        <div class="daily">
+          <h2>Daily forecast</h2>
+          <!-- Insert daily forecast for the next 7 days here -->
+          <div class="daily-forecast">
+            <p class="day">Sat</p>
+            <p class="day">Sun</p>
+            <p class="day">Mon</p>
+            <p class="day">Tue</p>
+            <p class="day">Wed</p>
+            <p class="day">Thu</p>
+            <p class="day">Fri</p>
+          </div>
+        </div>
+      </section>
+      <section id="sidebar">
+        <h3>Hourly forecast</h3>
+        <!-- Insert hourly forecast for the selected day here -->
         <div class="daily-forecast">
-          <p class="day">Sat</p>
-          <p class="day">Sun</p>
-          <p class="day">Mon</p>
-          <p class="day">Tue</p>
-          <p class="day">Wed</p>
-          <p class="day">Thu</p>
-          <p class="day">Fri</p>
+          <button type="button">Saturday</button>
+          <div class="drop-down">
+            <p>Monday</p>
+            <p>Tuesday</p>
+            <p>Wednesday</p>
+            <p>Thursday</p>
+            <p>Friday</p>
+            <p>Saturday</p>
+            <p>Sunday</p>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
-    <section sidebar>
-      <h3>Hourly forecast</h3>
-      <!-- Insert hourly forecast for the selected day here -->
-      <div class="daily-forecast">
-        <button type="button">Saturday</button>
-        <div class="drop-down">
-          <p>Monday</p>
-          <p>Tuesday</p>
-          <p>Wednesday</p>
-          <p>Thursday</p>
-          <p>Friday</p>
-          <p>Saturday</p>
-          <p>Sunday</p>
-        </div>
-      </div>
-    </section>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
