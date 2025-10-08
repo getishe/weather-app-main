@@ -143,7 +143,7 @@ input[type="text"] {
   height: 30px;
   border-radius: 5px;
   border: none;
-  padding: 15px 40px;
+  padding: 17px 40px;
   font-size: 16px;
   background-color: darkgray;
   grid-area: search-input;
@@ -170,7 +170,7 @@ img.search-icon {
   align-self: center;
   position: relative;
   left: 40px;
-  bottom: 7px;
+  bottom: 8px;
   /* pointer-events: none; */
 }
 
@@ -184,14 +184,15 @@ img.search-icon {
   padding: 0 10px 70px 50px;
   /* justify-items: center; */
 }
-
-.forcast img {
+section#search-section {
+  border: 2px solid red;
+  display: grid;
+}
+#search-section img {
   /* width: 3300px; */
   height: 200px;
+  border: 2px solid blue;
   /* justify-self: center; */
-}
-.daily {
-  display: block;
 }
 
 .atomsphere {
@@ -199,8 +200,21 @@ img.search-icon {
   justify-content: flex-start;
   align-items: center;
   margin-top: 10px;
-  border: 2px solid red;
+  /* border: 9px solid red; */
+  gap: 50px;
 }
 p.description {
-  margin: 0 110px 0 0;
+  font-size: 0.8rem;
+  color: var(--gray);
+  background-color: lightcyan;
+  /* padding: 15px; */
+  display: flex;
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 5px; */
+  /* background-color: lightcyan; */
+  /* padding: 5px; */
 }
