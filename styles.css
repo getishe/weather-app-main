@@ -150,14 +150,15 @@ input[type="text"] {
   color: white;
 }
 
-.search-bar button#search-button {
+/* .search-bar button#search-button {
   width: 80px;
   height: 30px;
   font-size: 16px;
   background-color: var(--light-blue);
   color: white;
   padding: 15px 0;
-}
+  border: 2px solid yellow;
+} */
 input::placeholder {
   color: white;
   font-size: 16px;
@@ -188,6 +189,9 @@ img.search-icon {
   /* width: 3300px; */
   height: 200px;
   /* justify-self: center; */
+}
+.daily {
+  display: block;
 }
 
 .atomsphere {
