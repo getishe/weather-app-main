@@ -191,7 +191,6 @@ section#search-section {
 #search-section img {
   /* width: 3300px; */
   height: 200px;
-  border: 2px solid blue;
   /* justify-self: center; */
 }
 
@@ -200,21 +199,55 @@ section#search-section {
   justify-content: flex-start;
   align-items: center;
   margin-top: 10px;
-  /* border: 9px solid red; */
-  gap: 50px;
+  border: 2px solid red;
+  gap: 20px;
 }
-p.description {
+.description {
   font-size: 0.8rem;
   color: var(--gray);
   background-color: lightcyan;
   /* padding: 15px; */
-  display: flex;
-  width: 100px;
+  display: grid;
+
+  width: 124px;
   height: 80px;
-  text-align: center;
+  /* text-align: center; */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  border-radius: 8px;
   /* margin-right: 5px; */
   /* background-color: lightcyan; */
-  /* padding: 5px; */
+  padding: 6px 14px;
+}
+
+.daily-time {
+  margin-top: 3rem;
+  border: 2px solid red;
+}
+.daily-time h2 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.daily-week {
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+p.day {
+  width: 71px;
+  height: 110px;
+  background-color: gray;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+section#sidebar {
+}
+.daily-forecast {
+  border: 2px solid green;
 }
