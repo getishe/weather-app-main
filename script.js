@@ -9,6 +9,9 @@ toggled.addEventListener("click", function (event) {
     dropdown.style.display = "block";
     event.stopPropagation();
     //Prevent body click from firing
+  } else {
+    dropdown.style.display = "none";
+    event.stopPropagation();
   }
 });
 
@@ -23,6 +26,9 @@ selectedDay.addEventListener("click", function (event) {
   event.preventDefault();
   if (optionsList.style.display == "none") {
     optionsList.style.display = "block";
+    event.stopPropagation();
+  } else {
+    optionsList.style.display = "none";
     event.stopPropagation();
   }
 });
