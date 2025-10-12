@@ -13,6 +13,17 @@
   --gray: hsl(240, 100%, 80%);
   --dark-gray: hsl(240, 100%, 60%);
 }
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid var(--dark-blue); /* Adds padding effect */
+}
+
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("./assets/fonts/Bricolage_Grotesque/static/BricolageGrotesque-Bold.ttf");
@@ -93,6 +104,7 @@ button {
   height: auto;
   text-align: left;
   background-color: hsl(243, 27%, 20%);
+  z-index: 1;
 }
 
 .dropdown-menu p {
@@ -177,7 +189,7 @@ img.search-icon {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 340px;
+  gap: 300px;
   max-width: 930px;
   margin: 0 auto;
   border: 2px solid red;
@@ -247,7 +259,84 @@ p.day {
 }
 
 section#sidebar {
+  /* border: 2px solid red; */
+  margin-right: 22px;
+  padding: 0 10px 0 10px;
+  background-color: #25253f;
+  border-radius: 10px;
 }
 .daily-forecast {
-  border: 2px solid green;
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: daily-forecast;
+  margin-top: 0.5rem;
+}
+
+.daily-forecast h3 {
+  font-size: 0.8rem;
+  /* margin-bottom: 0.8rem; */
+}
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  /* margin-bottom: 1rem; */
+  width: 100px;
+  /* text-align: center; */
+}
+.selected-day {
+  background-color: hsl(243, 23%, 24%);
+  /* border: 2px solid var(--gray); */
+  /* padding: 5px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+ul.options-list {
+  background-color: #25253f;
+  position: absolute;
+  color: white;
+  display: none;
+  list-style-type: none;
+  /* left: 50%; */
+  transform: translateX(-50%);
+  width: 100px;
+  /* text-align: center; */
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.hourly-forecast {
+  /* border: 2px solid green; */
+  display: block;
+  /* padding: 5px; */
+  /* margin: 0.3rem; */
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 0.5rem; */
+  /* padding: 10px; */
+  background-color: #37375d;
+  border-radius: 5px;
+  margin: 0.8rem 0;
+}
+
+.time p.hour {
+  font-size: 0.9rem;
+}
+.time img.hourly-icon {
+  width: 40px;
+  height: 40px;
 }
