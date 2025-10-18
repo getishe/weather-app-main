@@ -49,5 +49,5 @@ document.body.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   // Your code here
   body.style.display = "block";
-  
+  toggled.style.display = "block";
 });
