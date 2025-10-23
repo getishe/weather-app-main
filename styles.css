@@ -333,6 +333,15 @@ ul.options-list {
   margin: 0.8rem 0;
 }
 
+.indicator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* padding: 5px 10px; */
+}
+
 .time p.hour {
   font-size: 0.9rem;
 }
