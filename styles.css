@@ -197,27 +197,35 @@ img.search-icon {
   /* justify-items: center; */
 }
 section#search-section {
-  border: 2px solid red;
+  border: 2px solid green;
   display: grid;
+  max-width: 600px;
+  width: 100%;
+  justify-self: start;
+  margin: 0;
 }
 #search-section img {
   /* width: 3300px; */
-  height: 200px;
+  height: auto;
+  max-width: 100%;
+  border: 2px solid red;
+  margin-bottom: 0;
   /* justify-self: center; */
 }
 
 .atomsphere {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 10px;
-  border: 2px solid red;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  /* margin-top: -90px; */
+  border: 2px solid rebeccapurple;
   gap: 20px;
+  /* padding: 0; */
 }
 .description {
   font-size: 0.8rem;
   color: var(--gray);
-  background-color: lightcyan;
+  background-color: #37375d;
   /* padding: 15px; */
   display: grid;
 
@@ -242,27 +250,58 @@ section#search-section {
 }
 
 .daily-week {
-  /* border: 2px solid yellow; */
+  border: 2px solid yellow;
   display: flex;
   justify-content: flex;
   align-items: center;
   gap: 10px;
 }
-
-p.day {
+.cast {
+  display: grid;
+  border: 2px solid red;
+}
+.cast {
   width: 71px;
   height: 110px;
-  background-color: gray;
-  padding: 10px;
+  background-color: #37375d;
+  padding: 10px 5px 130px 5px;
   border-radius: 8px;
+}
+
+p.day {
   text-align: center;
+  padding-bottom: 10px;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 10px;
 }
 
 section#sidebar {
-  /* border: 2px solid red; */
+  border: 8px solid red;
   margin-right: 22px;
   padding: 0 10px 0 10px;
   background-color: #25253f;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  height: auto;
+  max-height: calc(100vh - 80px);
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  align-self: start; /* PREVENT grid stretching */
+}
+
+#sidebar::-webkit-scrollbar {
+  width: 3px;
+  background-color: #888;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  background-color: #888;
   border-radius: 10px;
 }
 .daily-forecast {
@@ -316,8 +355,9 @@ ul.options-list {
 }
 
 .hourly-forecast {
-  /* border: 2px solid green; */
+  border: 2px solid green;
   display: block;
+
   /* padding: 5px; */
   /* margin: 0.3rem; */
 }
@@ -326,8 +366,9 @@ ul.options-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 2px solid red;
   /* margin-bottom: 0.5rem; */
-  /* padding: 10px; */
+  padding: 0 10px;
   background-color: #37375d;
   border-radius: 5px;
   margin: 0.8rem 0;
