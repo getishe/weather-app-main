@@ -296,15 +296,27 @@ section#sidebar {
   align-self: start; /* PREVENT grid stretching */
 }
 
+/* ...existing code... */
 #sidebar::-webkit-scrollbar {
-  width: 33px;
-  height: 3px;
-  background-color: #888;
+  width: 4px; /* vertical thickness */
+  height: 4px; /* horizontal thickness (if any) */
+  background: transparent;
+}
+#sidebar::-webkit-scrollbar-track {
+  background: transparent;
 }
 #sidebar::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 10px;
+  min-height: 20px; /* smallest thumb length; browser may enforce larger minimum */
+  border: 2px solid rgba(0, 0, 0, 0); /* optional padding effect */
 }
+/* Firefox */
+#sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+/* ...existing code... */
 .daily-forecast {
   /* border: 2px solid green; */
   display: flex;
