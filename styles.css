@@ -220,7 +220,7 @@ section#search-section {
   /* margin-top: -90px; */
   border: 2px solid rebeccapurple;
   gap: 20px;
-  /* padding: 0; */
+  padding-top: 10px;
 }
 .description {
   font-size: 0.8rem;
@@ -241,7 +241,7 @@ section#search-section {
 }
 
 .daily-time {
-  margin-top: 3rem;
+  margin-top: 1rem;
   border: 2px solid red;
 }
 .daily-time h2 {
