@@ -225,7 +225,7 @@ section#search-section {
 .description {
   font-size: 0.8rem;
   color: var(--gray);
-  background-color: #37375d;
+  background-color: hsl(243, 23%, 24%);
   /* padding: 15px; */
   display: grid;
 
