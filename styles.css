@@ -192,12 +192,12 @@ img.search-icon {
   gap: 300px;
   max-width: 930px;
   margin: 0 auto;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 0 10px 70px 50px;
   /* justify-items: center; */
 }
 section#search-section {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: grid;
   max-width: 600px;
   width: 100%;
@@ -208,7 +208,7 @@ section#search-section {
   /* width: 3300px; */
   height: auto;
   max-width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   margin-bottom: 0;
   /* justify-self: center; */
 }
@@ -218,7 +218,7 @@ section#search-section {
   /* justify-content: flex-start; */
   /* align-items: center; */
   /* margin-top: -90px; */
-  border: 2px solid rebeccapurple;
+  /* border: 2px solid rebeccapurple; */
   gap: 20px;
   padding-top: 10px;
 }
@@ -242,7 +242,7 @@ section#search-section {
 
 .daily-time {
   margin-top: 1rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .daily-time h2 {
   font-size: 1rem;
@@ -250,7 +250,7 @@ section#search-section {
 }
 
 .daily-week {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   display: flex;
   justify-content: flex;
   align-items: center;
@@ -258,7 +258,7 @@ section#search-section {
 }
 .cast {
   display: grid;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .cast {
   width: 71px;
@@ -282,7 +282,7 @@ p.day {
 }
 
 section#sidebar {
-  border: 8px solid red;
+  /* border: 8px solid red; */
   margin-right: 22px;
   padding: 0 10px 0 10px;
   background-color: #25253f;
@@ -309,7 +309,8 @@ section#sidebar {
   background-color: #888;
   border-radius: 10px;
   min-height: 20px; /* smallest thumb length; browser may enforce larger minimum */
-  border: 2px solid rgba(0, 0, 0, 0); /* optional padding effect */
+  /* border: 2px solid rgba(0, 0, 0, 0);  */
+  /* optional padding effect */
 }
 /* Firefox */
 #sidebar {
@@ -368,7 +369,7 @@ ul.options-list {
 }
 
 .hourly-forecast {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: block;
 
   /* padding: 5px; */
@@ -379,7 +380,7 @@ ul.options-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* margin-bottom: 0.5rem; */
   padding: 0 10px;
   background-color: #37375d;
