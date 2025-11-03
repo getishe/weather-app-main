@@ -51,3 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
   body.style.display = "block";
   toggled.style.display = "block";
 });
+
+
+async (params) => {
+  // Dom
+}
