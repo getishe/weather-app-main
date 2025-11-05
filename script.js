@@ -46,13 +46,29 @@ document.body.addEventListener("click", function () {
   optionsList.style.display = "none";
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Your code here
-  body.style.display = "block";
-  toggled.style.display = "block";
-});
-
 Document.addEventListener("DOMContentLoaded", function () {
-  body.style.display = "block";
-  toggled.style.display = "block";
+  // create a variable to track units and initialize UI state
+  let isMetric = true; // default to metric (Celsius)
+
+  // ensure dropdowns are hidden on load
+  if (dropdown) dropdown.style.display = "none";
+  if (optionsList) optionsList.style.display = "none";
+
+  // set a sensible default for selectedDay if empty
+  if (selectedDay && !selectedDay.textContent.trim()) {
+    selectedDay.textContent = "Select a day";
+  }
+
+  // wire up option items to update the selected day (if there are list items)
+  if (optionsList) {
+    optionsList.querySelectorAll("li").forEach((li) => {
+      li.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (selectedDay) selectedDay.textContent = this.textContent.trim();
+        optionsList.style.display = "none";
+        // stop propagation so body click doesn't immediately hide things again
+        e.stopPropagation();
+      });
+    });
+  }
 });
