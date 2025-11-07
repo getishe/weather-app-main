@@ -282,30 +282,35 @@ p.day {
 }
 
 section#sidebar {
-  /* border: 8px solid red; */
+  border: 2px solid blue;
   margin-right: 22px;
-  padding: 0 10px 0 10px;
+  padding: 10px;
   background-color: #25253f;
   border-radius: 10px;
-  scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
   height: auto;
-  max-height: calc(100vh - 80px);
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
   align-self: start; /* PREVENT grid stretching */
 }
 
+section#sidebar .hourly-forecast {
+  /* -webkit-overflow-scrolling: touch; */
+  overflow-y: auto;
+  max-height: calc(90vh - 80px);
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  display: block;
+}
+
 /* ...existing code... */
-#sidebar::-webkit-scrollbar {
+.hourly-forecast::-webkit-scrollbar {
   width: 4px; /* vertical thickness */
   height: 4px; /* horizontal thickness (if any) */
   background: transparent;
+  /* border: 2px solid red; */
 }
-#sidebar::-webkit-scrollbar-track {
+.hourly-forecast::-webkit-scrollbar-track {
   background: transparent;
 }
-#sidebar::-webkit-scrollbar-thumb {
+.hourly-forecast::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 10px;
   min-height: 20px; /* smallest thumb length; browser may enforce larger minimum */
@@ -313,17 +318,17 @@ section#sidebar {
   /* optional padding effect */
 }
 /* Firefox */
-#sidebar {
+/* .hourly-forecast {
   scrollbar-width: thin;
   scrollbar-color: #888 transparent;
-}
+} */
 /* ...existing code... */
 .daily-forecast {
   /* border: 2px solid green; */
-  position: sticky;
-  top: 0;
-  padding: 15px;
-  background-color: #25253f;
+  /* position: sticky; */
+  /* top: 0; */
+  /* padding: 15px; */
+  /* background-color: #25253f; */
   display: flex;
   justify-content: space-between;
   align-items: center;
