@@ -320,11 +320,15 @@ section#sidebar {
 /* ...existing code... */
 .daily-forecast {
   /* border: 2px solid green; */
+  position: sticky;
+  top: 0;
+  padding: 15px;
+  background-color: #25253f;
   display: flex;
   justify-content: space-between;
   align-items: center;
   grid-area: daily-forecast;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .daily-forecast h3 {
