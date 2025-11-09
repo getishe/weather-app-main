@@ -88,9 +88,35 @@ button {
   cursor: pointer;
   color: white;
   margin-bottom: 1rem;
+  /* border: 2px solid var(--gray); */
+  /* font-size: 20px; */
+}
+button#toggle-units {
+  background-color: var(--very-dark-blue);
+  border: none;
+  padding: 10px 30px 10px 10px;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  /* width: 80px;
+  height: auto; */
+  cursor: pointer;
+  color: white;
+  margin-bottom: 1rem;
+  /* border: 2px solid var(--gray); */
   /* font-size: 20px; */
 }
 
+button#toggle-units:hover {
+  background-color: hsl(243, 27%, 20%);
+  transform: scale(1.05);
+}
+
+button#toggle-units:hover .arrow-icon-util {
+  transform: rotate(180deg);
+}
 .dropdown-menu {
   position: absolute;
   display: none;
@@ -282,9 +308,9 @@ p.day {
 }
 
 section#sidebar {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   margin-right: 22px;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: #25253f;
   border-radius: 10px;
   height: auto;
@@ -294,7 +320,7 @@ section#sidebar {
 section#sidebar .hourly-forecast {
   /* -webkit-overflow-scrolling: touch; */
   overflow-y: auto;
-  max-height: calc(90vh - 80px);
+  max-height: calc(80vh - 80px);
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   display: block;
@@ -305,7 +331,6 @@ section#sidebar .hourly-forecast {
   width: 4px; /* vertical thickness */
   height: 4px; /* horizontal thickness (if any) */
   background: transparent;
-  /* border: 2px solid red; */
 }
 .hourly-forecast::-webkit-scrollbar-track {
   background: transparent;
@@ -334,6 +359,7 @@ section#sidebar .hourly-forecast {
   align-items: center;
   grid-area: daily-forecast;
   margin-top: 0.8rem;
+  padding: 15px;
 }
 
 .daily-forecast h3 {
@@ -350,39 +376,92 @@ section#sidebar .hourly-forecast {
 .selected-day {
   background-color: hsl(243, 23%, 24%);
   /* border: 2px solid var(--gray); */
-  /* padding: 5px; */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  position: relative;
+  /* gap: 0.2px; */
+  padding-top: 5px;
+  text-align: center;
   height: 30px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 20%;
+  left: 70%;
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.custom-dropdown:hover .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.arrow-icon-util {
+  /* border: 2px solid white; */
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin-left: 75px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.selected-day:hover {
+  background-color: hsl(243, 27%, 20%);
 }
 
 ul.options-list {
   background-color: #25253f;
   position: absolute;
   color: white;
-  display: none;
+  /* display: none; */
   list-style-type: none;
+  /* border: 2px solid red; */
   /* left: 50%; */
-  transform: translateX(-50%);
-  width: 100px;
+  transform: translateX(-50%) translateY(-10px);
+  width: 150px;
   /* text-align: center; */
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
   z-index: 1;
-  transition: all 0.3s ease;
+  transition: all 0.9s ease;
+}
+
+ul.options-list li {
+  padding: 5px 0;
+  /* border: 2px solid red; */
+}
+
+ul.options-list li:hover {
+  background-color: #37375d;
+}
+
+.custom-dropdown:hover ul.options-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .hourly-forecast {
-  /* border: 2px solid green; */
   display: block;
-
-  /* padding: 5px; */
-  /* margin: 0.3rem; */
+  padding: 0 15px;
+  margin: 0rem 0 1rem 0;
 }
 
 .time {
@@ -394,7 +473,7 @@ ul.options-list {
   padding: 0 10px;
   background-color: #37375d;
   border-radius: 5px;
-  margin: 0.8rem 0;
+  margin: 0.6rem 0;
 }
 
 .indicator {
