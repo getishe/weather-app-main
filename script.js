@@ -72,3 +72,7 @@ Document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.querySelector(".menu-button").addEventListener("click", () => {
+  document.querySelector(".options-list").classList.toggle("show");
+});
