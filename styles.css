@@ -109,6 +109,12 @@ button#toggle-units {
   /* font-size: 20px; */
 }
 
+button:focus-visible,
+.selected-day:focus-visible {
+  outline: 2px solid var(--light-blue);
+  outline-offset: 2px;
+}
+
 button#toggle-units:hover {
   background-color: hsl(243, 27%, 20%);
   transform: scale(1.05);
@@ -117,6 +123,7 @@ button#toggle-units:hover {
 button#toggle-units:hover .arrow-icon-util {
   transform: rotate(180deg);
 }
+
 .dropdown-menu {
   position: absolute;
   display: none;
