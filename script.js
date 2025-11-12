@@ -3,6 +3,7 @@ let toggled = document.querySelector("#toggle-units");
 let dropdown = document.querySelector(".dropdown-menu");
 let selectedDay = document.querySelector(".selected-day");
 let optionsList = document.querySelector("ul.options-list");
+let list = document.querySelectorAll("ul.options-list li");
 toggled.addEventListener("click", function (event) {
   event.preventDefault();
   if (dropdown.style.display == "none") {
@@ -64,15 +65,16 @@ Document.addEventListener("DOMContentLoaded", function () {
     optionsList.querySelectorAll("li").forEach((li) => {
       li.addEventListener("click", function (e) {
         e.preventDefault();
-        if (selectedDay) selectedDay.textContent = this.textContent.trim();
-        optionsList.style.display = "none";
+        list.forEach((item) => {
+          item.style.display = "block";
+        });
         // stop propagation so body click doesn't immediately hide things again
         e.stopPropagation();
       });
     });
   }
 });
-//add some features 
+//add some features
 
 document.querySelector(".menu-button").addEventListener("click", () => {
   document.querySelector(".options-list").classList.toggle("show");
