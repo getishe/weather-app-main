@@ -2,8 +2,9 @@
 let toggled = document.querySelector("#toggle-units");
 let dropdown = document.querySelector(".dropdown-menu");
 let selectedDay = document.querySelector(".selected-day");
+let select = document.querySelector(".select");
 let optionsList = document.querySelector("ul.options-list");
-let list = document.querySelectorAll("ul.options-list li");
+let list = document.querySelectorAll("li");
 toggled.addEventListener("click", function (event) {
   event.preventDefault();
   if (dropdown.style.display == "none") {
@@ -47,7 +48,7 @@ document.body.addEventListener("click", function () {
   optionsList.style.display = "none";
 });
 
-Document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // create a variable to track units and initialize UI state
   let isMetric = true; // default to metric (Celsius)
 
@@ -61,21 +62,24 @@ Document.addEventListener("DOMContentLoaded", function () {
   }
 
   // wire up option items to update the selected day (if there are list items)
-  if (optionsList) {
-    optionsList.querySelectorAll("li").forEach((li) => {
-      li.addEventListener("click", function (e) {
-        e.preventDefault();
-        list.forEach((item) => {
-          item.style.display = "block";
-        });
-        // stop propagation so body click doesn't immediately hide things again
-        e.stopPropagation();
-      });
+  // if (optionsList.style.display === "block") {
+  // optionsList.querySelectorAll("li").forEach((li) => {
+  list.forEach((li) => {
+    li.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (select) {
+        select.textContent = this.textContent;
+      }
+      optionsList.style.display = "none";
+      event.stopPropagation();
+      // stop propagation so body click doesn't immediately hide things again
     });
-  }
-});
-//add some features
+    // });
+    // }
+  });
+  //add some features
 
-document.querySelector(".menu-button").addEventListener("click", () => {
-  document.querySelector(".options-list").classList.toggle("show");
+  document.querySelector(".menu-button").addEventListener("click", () => {
+    document.querySelector(".options-list").classList.toggle("show");
+  });
 });
