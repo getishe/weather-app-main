@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       if (select) {
         select.textContent = this.textContent;
+        select.textContent = li.textContent;
       }
       optionsList.style.display = "none";
       event.stopPropagation();
