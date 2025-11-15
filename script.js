@@ -84,3 +84,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".options-list").classList.toggle("show");
   });
 });
+
+//APi integrations 
