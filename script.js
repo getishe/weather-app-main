@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // }
   });
   //add some features
-
+///som add
   document.querySelector(".menu-button").addEventListener("click", () => {
     document.querySelector(".options-list").classList.toggle("show");
   });
