@@ -64,25 +64,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // wire up option items to update the selected day (if there are list items)
   // if (optionsList.style.display === "block") {
   // optionsList.querySelectorAll("li").forEach((li) => {
+  // list.forEach((li) => {
+  //   li.addEventListener("click", function (event) {
+  //     event.preventDefault();
+  //     if (select) {
+  //       select.textContent = this.textContent;
+  //       select.textContent = li.textContent;
+  //     }
+  //     optionsList.style.display = "none";
+  //     event.stopPropagation();
+  //     // stop propagation so body click doesn't immediately hide things again
+  //   });
+  //   // });
+  //   // }
+  // });
+
   list.forEach((li) => {
     li.addEventListener("click", function (event) {
       event.preventDefault();
       if (select) {
-        select.textContent = this.textContent;
         select.textContent = li.textContent;
       }
+
       optionsList.style.display = "none";
       event.stopPropagation();
-      // stop propagation so body click doesn't immediately hide things again
     });
-    // });
-    // }
   });
   //add some features
-///som add
+  ///som add
   document.querySelector(".menu-button").addEventListener("click", () => {
     document.querySelector(".options-list").classList.toggle("show");
   });
 });
 
-//APi integrations for api integration 
+//APi integrations for api integration
