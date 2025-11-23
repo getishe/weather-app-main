@@ -104,8 +104,8 @@ return promise New((resolve, retrive) {
  setTimeout((resolve,new Promise`{ms}`,ms))
 }
   else {
-  setTimeout((reject, new Error 
-
+  setTimeout((reject, new Error `{wwoop}`))
+  
 
               
 }
