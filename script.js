@@ -97,4 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//APi integrations for api integration
+//APi integrations for api integration 
+function(ms) {
+return promise New((resolve, retrive) { 
+  if(ms == 509) {
+ setTimeout((resolve,new Promise`{ms}`,ms))
+}
+  else {
+  setTimeout((reject, new Error 
+
+
+              
+}
+} )
