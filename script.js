@@ -97,16 +97,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//APi integrations for api integration 
-function(ms) {
-return promise New((resolve, retrive) { 
-  if(ms == 509) {
- setTimeout((resolve,new Promise`{ms}`,ms))
+//APi integrations for api integration
+function ms(ms) {
+  return new Promise((resolve, reject) => {
+    if (ms == 509) {
+      setTimeout(() => resolve(ms), ms);
+    } else {
+      setTimeout(() => reject(new Error(`{wops}`)), ms);
+    }
+  });
 }
-  else {
-  setTimeout((reject, new Error `{wwoop}`))
-  
 
-              
-}
-} )
+ms(509).then(console.log).catch(console.error);
