@@ -48,64 +48,53 @@ document.body.addEventListener("click", function () {
   optionsList.style.display = "none";
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // create a variable to track units and initialize UI state
-  let isMetric = true; // default to metric (Celsius)
+// create a variable to track units and initialize UI state
+let isMetric = true; // default to metric (Celsius)
 
-  // ensure dropdowns are hidden on load
-  if (dropdown) dropdown.style.display = "none";
-  if (optionsList) optionsList.style.display = "none";
+// ensure dropdowns are hidden on load
+if (dropdown) dropdown.style.display = "none";
+if (optionsList) optionsList.style.display = "none";
 
-  // set a sensible default for selectedDay if empty
-  if (selectedDay && !selectedDay.textContent.trim()) {
-    selectedDay.textContent = "Select a day";
-  }
+// set a sensible default for selectedDay if empty
+if (selectedDay && !selectedDay.textContent.trim()) {
+  selectedDay.textContent = "Select a day";
+}
 
-  // wire up option items to update the selected day (if there are list items)
-  // if (optionsList.style.display === "block") {
-  // optionsList.querySelectorAll("li").forEach((li) => {
-  // list.forEach((li) => {
-  //   li.addEventListener("click", function (event) {
-  //     event.preventDefault();
-  //     if (select) {
-  //       select.textContent = this.textContent;
-  //       select.textContent = li.textContent;
-  //     }
-  //     optionsList.style.display = "none";
-  //     event.stopPropagation();
-  //     // stop propagation so body click doesn't immediately hide things again
-  //   });
-  //   // });
-  //   // }
-  // });
+// wire up option items to update the selected day (if there are list items)
 
-  list.forEach((li) => {
-    li.addEventListener("click", function (event) {
-      event.preventDefault();
-      if (select) {
-        select.textContent = li.textContent;
-      }
+list.forEach((li) => {
+  li.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (select) {
+      select.textContent = li.textContent;
+    }
 
-      optionsList.style.display = "none";
-      event.stopPropagation();
-    });
-  });
-  //add some features
-  ///som add
-  document.querySelector(".menu-button").addEventListener("click", () => {
-    document.querySelector(".options-list").classList.toggle("show");
+    optionsList.style.display = "none";
+    event.stopPropagation();
   });
 });
 
-//APi integrations for api integration
-function ms(ms) {
-  return new Promise((resolve, reject) => {
-    if (ms == 509) {
-      setTimeout(() => resolve(ms), ms);
-    } else {
-      setTimeout(() => reject(new Error(`{wops}`)), ms);
-    }
-  });
-}
+const base = "https://api.open-meteo.com/v1/forecast";
+const defaultLat = "52.52";
+const defaultLon = "13.41";
 
-ms(509).then(console.log).catch(console.error);
+const defaultParams = {
+  hourly: "temperature_2m",
+  timezone: "auto",
+};
+
+function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {}) {
+  const params = new URLSearchParams({
+    ...defaultParams,
+    ...extraParams,
+    latitude: lat,
+    longitude: lon,
+  });
+
+  return `${base}?${params.toString()}`;
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const url = buildWeatherUrl("40.7128", "-74.0060");
+  console.log("Weather API URL:", url);
+  //APi integrations for api integration
+});
