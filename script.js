@@ -84,6 +84,10 @@ const defaultParams = {
 };
 
 function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {}) {
+  // function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {})
+  // - Declares a function that returns a fully formed weather API URL.
+  // - `lat` and `lon` default to the module-level `defaultLat` / `defaultLon` if not provided.
+  // - `extraParams` is an object of additional query parameters (defaults to an empty object).
   const params = new URLSearchParams({
     ...defaultParams,
     ...extraParams,
