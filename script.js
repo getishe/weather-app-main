@@ -85,20 +85,31 @@ const defaultParams = {
 
 function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {}) {
   // function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {})
-  // - Declares a function that returns a fully formed weather API URL.
+  // -Declares a function that returns a fully formed weather API URL.
   // - `lat` and `lon` default to the module-level `defaultLat` / `defaultLon` if not provided.
   // - `extraParams` is an object of additional query parameters (defaults to an empty object).
+  // Build a fully-qualified Open-Meteo API URL.
+  // - lat, lon default to module-level defaults when not provided.
+  // - extraParams is an object of additional query parameters (e.g. daily, start_date).
+  // The API expects latitude/longitude named keys; we merge defaults and extra params
+  // then serialize them with URLSearchParams to produce a proper query string.
   const params = new URLSearchParams({
-    ...defaultParams,
-    ...extraParams,
-    latitude: lat,
-    longitude: lon,
+    ...defaultParams, // base query params (hourly, timezone, etc.)
+    ...extraParams, // any caller-specified overrides / additions
+    latitude: lat, // required by Open-Meteo
+    longitude: lon, // required by Open-Meteo
   });
 
   return `${base}?${params.toString()}`;
 }
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Example usage on DOM ready: build a URL for New York City coordinates
+  // You can replace the lat/lon or pass extra params (e.g. { hourly: "temperature_2m,relativehumidity_2m" })
   const url = buildWeatherUrl("40.7128", "-74.0060");
   console.log("Weather API URL:", url);
-  //APi integrations for api integration
+
+  // TODO: call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
 });
+
+//write a fetch functions to recive a weather forecast
