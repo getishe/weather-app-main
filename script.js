@@ -84,20 +84,11 @@ const defaultParams = {
 };
 
 function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {}) {
-  // function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {})
-  // -Declares a function that returns a fully formed weather API URL.
-  // - `lat` and `lon` default to the module-level `defaultLat` / `defaultLon` if not provided.
-  // - `extraParams` is an object of additional query parameters (defaults to an empty object).
-  // Build a fully-qualified Open-Meteo API URL.
-  // - lat, lon default to module-level defaults when not provided.
-  // - extraParams is an object of additional query parameters (e.g. daily, start_date).
-  // The API expects latitude/longitude named keys; we merge defaults and extra params
-  // then serialize them with URLSearchParams to produce a proper query string.
   const params = new URLSearchParams({
     ...defaultParams, // base query params (hourly, timezone, etc.)
     ...extraParams, // any caller-specified overrides / additions
     latitude: lat, // required by Open-Meteo
-    longitude: lon, // required by Open-Meteo
+    longitude: lon, // required by Open-Meteo,
   });
 
   return `${base}?${params.toString()}`;
@@ -108,6 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // You can replace the lat/lon or pass extra params (e.g. { hourly: "temperature_2m,relativehumidity_2m" })
   const url = buildWeatherUrl("40.7128", "-74.0060");
   console.log("Weather API URL:", url);
+
+  // Browser or node fetch available
+  async function getJson(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  getJson("https://api.example.com/data")
+    .then((data) => console.log(data))
+    .catch((err) => console.error("Fetch failed:", err));
 
   // TODO: call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
 });
