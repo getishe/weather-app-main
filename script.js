@@ -221,3 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 // setTimeout();
 // //write a fetch functions to recive a weather forecast
+
+if (some) {
+  console.lo();
+}
