@@ -110,118 +110,21 @@ document.addEventListener("DOMContentLoaded", function () {
   getJson("https://api.example.com/data")
     .then((data) => console.log(data))
     .catch((err) => console.error("Fetch failed:", err));
+
+  async function fetchForecast() {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Forecast data:", data);
+    } catch (error) {
+      console.error("Fetch failed:", error);
+    }
+  }
+  fetchForecast();
 });
 // call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
-//   async function fetchAndRenderForecast(lat = defaultLat, lon = defaultLon) {
-//     try {
-//       const url = buildWeatherUrl(lat, lon, {
-//         temperature_unit: isMetric ? "celsius" : "fahrenheit",
-//         hourly: "temperature_2m",
-//         current_weather: "true",
-//       });
 
-//       const data = await getJson(url);
-//       console.log("Forecast data:", data);
-
-//       // ensure we have an output container
-//       let out = document.querySelector("#forecast-output");
-//       if (!out) {
-//         out = document.createElement("div");
-//         out.id = "forecast-output";
-//         out.style.marginTop = "12px";
-//         out.style.whiteSpace = "pre-wrap";
-//         document.body.appendChild(out);
-//       }
-
-//       // prefer current_weather if present, otherwise fall back to the first hourly value
-//       const unit = isMetric ? "°C" : "°F";
-//       if (
-//         data.current_weather &&
-//         typeof data.current_weather.temperature !== "undefined"
-//       ) {
-//         out.textContent = `Current temperature: ${data.current_weather.temperature}${unit}`;
-//       } else if (
-//         data.hourly &&
-//         Array.isArray(data.hourly.temperature_2m) &&
-//         data.hourly.time
-//       ) {
-//         // try to find the closest hourly value to now (server time already converted by timezone=auto)
-//         const now = new Date();
-//         const times = data.hourly.time;
-//         const temps = data.hourly.temperature_2m;
-//         let idx = 0;
-//         for (let i = 0; i < times.length; i++) {
-//           const t = new Date(times[i]);
-//           if (t >= now) {
-//             idx = i;
-//             break;
-//           }
-//         }
-//         out.textContent = `Forecast (${times[idx]}): ${temps[idx]}${unit}`;
-//       } else {
-//         out.textContent =
-//           "No temperature data available from the API response.";
-//       }
-//     } catch (err) {
-//       console.error("Forecast fetch failed:", err);
-//       let out = document.querySelector("#forecast-output");
-//       if (!out) {
-//         out = document.createElement("div");
-//         out.id = "forecast-output";
-//         document.body.appendChild(out);
-//       }
-//       out.textContent = "Failed to load forecast data.";
-//     }
-//   }
-
-//   // add a small unit toggle control if one doesn't exist
-//   (function ensureUnitToggle() {
-//     let unitBtn = document.querySelector("#unit-toggle");
-//     if (!unitBtn) {
-//       unitBtn = document.createElement("button");
-//       unitBtn.id = "unit-toggle";
-//       unitBtn.type = "button";
-//       unitBtn.style.marginLeft = "8px";
-//       if (toggled && toggled.parentNode) {
-//         toggled.parentNode.insertBefore(unitBtn, toggled.nextSibling);
-//       } else {
-//         document.body.appendChild(unitBtn);
-//       }
-//     }
-//     const updateLabel = () =>
-//       (unitBtn.textContent = `Units: ${isMetric ? "C" : "F"}`);
-//     updateLabel();
-//     unitBtn.addEventListener("click", () => {
-//       isMetric = !isMetric;
-//       updateLabel();
-//       fetchAndRenderForecast(); // refresh with new units
-//     });
-//   })();
-
-//   // wire up list selection to optionally re-fetch for a day (if li items encode a date or coords)
-//   list.forEach((li) => {
-//     li.addEventListener("click", function (event) {
-//       event.preventDefault();
-//       // keep existing behavior: set select text
-//       if (select) select.textContent = li.textContent;
-
-//       // if li has data attributes for coordinates, use them; otherwise use defaults
-//       const lat = li.getAttribute("data-lat") || defaultLat;
-//       const lon = li.getAttribute("data-lon") || defaultLon;
-
-//       // close options and fetch
-//       if (optionsList) optionsList.style.display = "none";
-//       event.stopPropagation();
-//       fetchAndRenderForecast(lat, lon);
-//     });
-//   });
-
-//   // initial fetch on load
-//   fetchAndRenderForecast();
-// });
-// setTimeout();
-// //write a fetch functions to recive a weather forecast
-
-if (some) {
-  console.lo();
-}
+// write a fetch functions to receive a weather forecast
