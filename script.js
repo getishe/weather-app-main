@@ -100,16 +100,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const url = buildWeatherUrl("40.7128", "-74.0060");
   console.log("Weather API URL:", url);
 
-  // Browser or node fetch available
-  // async function getJson(url) {
-  //   const res = await fetch(url);
-  //   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  //   return res.json();
-  // }
+  //Browser or node fetch available
+  async function getJson(base) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
 
-  // getJson("https://api.example.com/data")
-  //   .then((data) => console.log(data))
-  //   .catch((err) => console.error("Fetch failed:", err));
+  getJson("https://api.example.com/data")
+    .then((data) => console.log(data))
+    .catch((err) => console.error("Fetch failed:", err));
 
   // async function fetchForecast() {
   //   try {
