@@ -99,17 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // You can replace the lat/lon or pass extra params (e.g. { hourly: "temperature_2m,relativehumidity_2m" })
   const url = buildWeatherUrl("40.7128", "-74.0060");
   console.log("Weather API URL:", url);
-    console.log("Here fech")
+  console.log("Here fech");
   //Browser or node fetch available
-  // async function getJson(base) {
-  //   const res = await fetch(url);
-  //   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  //   return res.json();
-  // }
+  async function getJson(base) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
 
-  // getJson("https://api.example.com/data")
-  //   .then((data) => console.log(data))
-  //   .catch((err) => console.error("Fetch failed:", err));
+  getJson("https://api.example.com/data")
+    .then((data) => console.log(data))
+    .catch((err) => console.error("Fetch failed:", err));
 
   // async function fetchForecast() {
   //   try {
