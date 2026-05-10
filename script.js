@@ -128,3 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
 
 // write a fetch functions to receive a weather forecast
+
+function fecth(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+  });
+}

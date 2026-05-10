@@ -372,7 +372,7 @@ section#sidebar .hourly-forecast {
 .custom-dropdown {
   position: relative;
   display: inline-block;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   /* margin-bottom: 1rem; */
   width: 120px;
   /* padding-left: 20px; */
@@ -380,7 +380,7 @@ section#sidebar .hourly-forecast {
 }
 .selected-day {
   background-color: hsl(243, 23%, 24%);
-  /* border: 2px solid var(--gray); */
+  border: 2px solid var(--gray);
   position: relative;
   padding: 0 5px;
   /* margin-left: 15px; */
