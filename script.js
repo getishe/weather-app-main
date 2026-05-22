@@ -107,31 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return res.json();
   }
 
-  getJson("https://api.example.com/data")
-    .then((data) => console.log(data))
-    .catch((err) => console.error("Fetch failed:", err));
+}
 
-  async function fetchForecast() {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log("Forecast data:", data);
-    } catch (error) {
-      console.error("Fetch failed:", error);
-    }
-  }
-  fetchForecast();
-});
+
 // call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
 
 // write a fetch functions to receive a weather forecast
 
-function fecth(url) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", url);
-  });
-}
