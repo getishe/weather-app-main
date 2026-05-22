@@ -94,23 +94,23 @@ function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {}) {
   return `${base}?${params.toString()}`;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Example usage on DOM ready: build a URL for New York City coordinates
-  // You can replace the lat/lon or pass extra params (e.g. { hourly: "temperature_2m,relativehumidity_2m" })
-  const url = buildWeatherUrl("40.7128", "-74.0060");
-  console.log("Weather API URL:", url);
-  console.log("Here fech");
-  //Browser or node fetch available
-  async function getJson(base) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
-  }
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    // Example usage on DOM ready: build a URL for New York City coordinates
+    // You can replace the lat/lon or pass extra params (e.g. { hourly: "temperature_2m,relativehumidity_2m" })
+    const url = buildWeatherUrl("40.7128", "-74.0060");
+    console.log("Weather API URL:", url);
+    console.log("Here fech");
+    //Browser or node fetch available
+    async function getJson(base) {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    }
+  },
 
-}
+  // call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
 
-
-// call fetch(url).then(...).catch(...) to retrieve forecast data and update the UI.
-
-// write a fetch functions to receive a weather forecast
-
+  // write a fetch functions to receive a weather forecast
+);
