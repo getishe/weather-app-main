@@ -100,6 +100,7 @@ document.addEventListener(
     // Example usage on DOM ready: build a URL for New York City coordinates
     // You can replace the lat/lon or pass extra params (e.g. { hourly: "temperature_2m,relativehumidity_2m" })
     const url = buildWeatherUrl("40.7128", "-74.0060");
+    console.log(url);
     console.log("Weather API URL:", url);
     console.log("Here fech");
     //Browser or node fetch available
