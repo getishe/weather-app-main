@@ -50,7 +50,7 @@ document.body.addEventListener("click", function () {
 
 // create a variable to track units and initialize UI state
 let isMetric = true; // default to metric (Celsius)
-
+console.log(isMetric)
 // ensure dropdowns are hidden on load
 if (dropdown) dropdown.style.display = "none";
 if (optionsList) optionsList.style.display = "none";
