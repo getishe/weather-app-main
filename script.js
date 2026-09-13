@@ -16,7 +16,7 @@ toggled.addEventListener("click", function (event) {
     event.stopPropagation();
   }
 });
-
+console.log(list);
 toggled.addEventListener("click", function (event) {
   event.preventDefault();
   if (dropdown.style.display == "block") {
