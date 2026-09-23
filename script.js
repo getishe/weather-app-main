@@ -93,7 +93,7 @@ function buildWeatherUrl(lat = defaultLat, lon = defaultLon, extraParams = {}) {
 
   return `${base}?${params.toString()}`;
 }
-
+xonsole.log(params)
 document.addEventListener(
   "DOMContentLoaded",
   function () {
